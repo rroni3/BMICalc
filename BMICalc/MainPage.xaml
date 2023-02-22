@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="BMICalc.MainPage">
+
+    <Grid RowDefinitions="*,*,*,*,*,*,*" BackgroundColor="LightPink" ColumnDefinitions="*,*,*" ColumnSpacing="15">
+        <Label Grid.Row="0" Grid.Column="1" Text="BMI Calculator" HorizontalOptions="Center" TextColor="DeepPink"></Label>
+        <Label HorizontalOptions="Center" Grid.Row="1" Grid.Column="0" Text="Men" TextColor="HotPink"></Label>
+        <Label HorizontalOptions="Center" Grid.Row="1" Grid.Column="1" Text="Women" TextColor="HotPink"></Label>
+        <Label HorizontalOptions="Center" Grid.Row="1" Grid.Column="2" Text="Other" TextColor="HotPink"></Label>
+        
+        <CheckBox HorizontalOptions="Center" Grid.Row="1" Grid.Column="0" x:Name="Men" ></CheckBox>
+        <CheckBox HorizontalOptions="Center" Grid.Row="1" Grid.Column="1" x:Name="Women"></CheckBox>
+        <CheckBox HorizontalOptions="Center" Grid.Row="1" Grid.Column="2" x:Name="Other"></CheckBox>
+
+        <Label HorizontalOptions="Center" Grid.Row="2" Grid.Column="1" Text="{Binding Source={x:Reference Weight},Path=Value}" TextColor="HotPink"></Label>
+        <Stepper HorizontalOptions="Center" Grid.Row="2" Grid.Column="1" x:Name="Weight" Maximum="120" Minimum="40" Increment="1" ></Stepper>
+
+        <Label HorizontalOptions="Center" Grid.Row="3" Grid.Column="1" Text="{Binding Source={x:Reference Height},Path=Value,StringFormat='{0:F2}'}" TextColor="HotPink"></Label>
+        <Slider Grid.Row="4" Grid.Column="1" x:Name="Height" Minimum="1.40" Maximum="2.10" ></Slider>
+        <Button Clicked="Button_Clicked" Grid.Row="5" Grid.Column="1" Text="calculate" CornerRadius="50" HorizontalOptions="Center" HeightRequest="100" WidthRequest="100" BackgroundColor="HotPink"></Button>
+
+        <Label x:Name="Result" HorizontalOptions="Center" Grid.Row="6" Grid.Column="1" TextColor="HotPink"></Label>
+        
+    </Grid>
+        
+        
+    
+
+</ContentPage>
